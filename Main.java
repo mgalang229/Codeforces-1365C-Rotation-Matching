@@ -61,8 +61,6 @@ public class Main {
 			for (int i = 0; i < n; i++) {
 				ind[b[i]-1] = i;
 			}
-			int[] dist = new int[n];
-			char[] dir = new char[n];
 			int[] L = new int[n+1];
 			int[] R = new int[n+1];
 			Arrays.fill(L, 0);
