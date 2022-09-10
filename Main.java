@@ -5,46 +5,6 @@ import java.io.PrintWriter;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.StringTokenizer;
-import java.util.TreeSet;
-
-/*
-
-5
-1 2 3 4 5
-2 3 4 5 1
-
-
-5
-5 4 3 2 1
-1 5 2 4 3
-
-0 1 2 3 4
-
-5: L = 1 and R = 4
-4: L = 2 and R = 3
-3: L = 2 and R = 3
-2: R = 1 and L = 4
-1: R = 4 and L = 1
-
-L:
-0 1 2 3 4 (ind)
-0 2 2 0 1 (freq)
-
-R:
-0 1 2 3 4 (ind)
-0 1 0 2 2 (freq)
-
-cyclic shifts:
-min(right, left)
-
-possible distances:
-if i < j, then j - i and n - j + i (L, R)
-if i > j, then i - j and j + n - i (R, L)
-
-distance affects the max answer
-find how many elements with equal distances
-
- */
 
 public class Main {
 	
@@ -85,8 +45,7 @@ public class Main {
 			}
 			int max = 0;
 			for (int i = 0; i <= n; i++) {
-				max = Math.max(max, L[i]);
-				max = Math.max(max, R[i]);
+				max = Math.max(max, Math.max(L[i], R[i]));
 			}
 			out.println(max);
 		}
